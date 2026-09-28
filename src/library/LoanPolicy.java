@@ -5,9 +5,11 @@ public class LoanPolicy {
         return type == MemberType.STUDENT ? 3 : 5;
     }
 
-    public int loanDays() { return 14; }
+    public int loanDays() {
+        return 14;
+    }
 
     public int overdueFee(int daysLate) {
-        return daysLate * 100;
+        return Math.max(0, daysLate) * 100;
     }
 }
